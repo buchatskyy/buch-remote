@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+}
+.text p {
+    line-height: 1;
+}
+.text h2 {
+align-self: center;
+}

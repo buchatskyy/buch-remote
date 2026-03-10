@@ -1,0 +1,62 @@
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scroller {
+  display: flex;
+  flex: 1;
+  /* <-- чтобы занял доступную ширину */
+  min-width: 0;
+  overflow-x: auto;
+  /* padding: 16px; */
+
+  /* snap to each card */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  /* iOS momentum */
+  -webkit-overflow-scrolling: touch;
+
+  /* avoid scroll chaining */
+  overscroll-behavior-x: contain;
+
+  /* hide scrollbars */
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.left {
+  left: 8px;
+}
+
+.right {
+  right: 8px;
+}
+
+.navBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}

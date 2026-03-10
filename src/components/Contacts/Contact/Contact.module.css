@@ -1,0 +1,16 @@
+.icon {
+    width: 2em;
+    height: 2em;
+}
+.block a {
+    color: black;
+    margin-left: .5em;
+    
+}
+.block a:visited {
+    color:black;
+}
+.block {
+    display: flex;
+    align-items: center;
+}

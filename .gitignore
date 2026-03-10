@@ -1,0 +1,4 @@
+node_modules/
+src/videos/*.mp4
+*.mp4
+desktop.ini

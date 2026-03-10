@@ -1,0 +1,33 @@
+.container {
+display: flex;
+flex-direction: column;
+flex-basis: 90%;
+}
+.navContainer {
+
+    height: 3em;
+    padding-left: .5em;
+    border-radius: .5em;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(183, 115, 41)  ;
+    box-shadow: -2px -1px 3px 1px rgb(183, 115, 41) ;
+    margin-top: .5em;
+    width: 100%;
+  
+}
+.container:first-child {
+    padding-top: 2em;
+}
+a:hover {
+    color: rgb(183, 115, 41);
+}
+.navContainer:has(a:hover) {
+    background-color: whitesmoke;
+    width: 100%;
+}
+.navigation {
+    position: sticky;
+    top: 8em;
+    width: 100%;  
+}

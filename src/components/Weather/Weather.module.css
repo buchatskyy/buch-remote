@@ -1,0 +1,116 @@
+.container {
+    width: 100%;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background: url('../../media/weather/background.png');
+    background-size: cover;
+    border-radius: 1em;
+    box-shadow: 0 0 20px 2px rgba(46, 61, 82, 0.545);
+
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputdiv {
+    position: relative;
+
+}
+
+.input {
+    width: 20em;
+    height: 3em;
+    border-radius: 1em;
+    font-size: 1.1em;
+    color: #333;
+    padding-right: 3em;
+    padding-left: 1em;
+
+}
+
+.loupe {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 3em;
+    height: 3em;
+    top: .7em;
+    right: .7em;
+    cursor: pointer;
+}
+
+.enterInf {
+    color: rgb(5, 86, 157);
+    font-size: 2em;
+    transition: opacity .5s;
+    cursor: context-menu;
+}
+
+.infoContainer {
+    margin-top: 2em;
+    padding: 2em 3em;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(9, 9, 9, 0.668);
+    color: white;
+    color: rgb(5, 86, 157);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+
+
+}
+
+@keyframes blink {
+    0% {
+        stroke: blue;
+    }
+
+    50% {
+        stroke: aliceblue;
+    }
+
+    100% {
+        stroke: blue
+    }
+
+}
+
+.svg:hover {
+    animation: blink 1.7s linear infinite;
+}
+
+.clear {
+    background: url('../../media/weather/clear.png');
+    background-size: cover;
+}
+
+.clouds {
+    background: url('../../media/weather/clouds.png');
+    background-size: cover;
+}
+
+.rain {
+    background: url('../../media/weather/rain.png');
+    background-size: cover;
+}
+
+.snow {
+    background: url('../../media/weather/snow.png');
+    background-size: cover;
+}
+
+.thunderstorm {
+    background: url('../../media/weather/thunderstorm.png');
+    background-size: cover;
+}

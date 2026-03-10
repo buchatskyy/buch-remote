@@ -1,0 +1,25 @@
+.card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 2px;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}

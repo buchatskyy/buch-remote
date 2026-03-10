@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container a {
+    font-size:smaller;
+    padding-left: 5px;
+    color: black;
+    margin: 4px 0;
+}
+.container a:visited {
+    color: black;
+}

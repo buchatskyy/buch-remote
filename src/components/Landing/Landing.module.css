@@ -1,0 +1,84 @@
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.offer {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.offerpoints p {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.offerlist {
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+.commitment {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.why ul,
+.process ol {
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cta button:hover {
+  background-color: #334155;
+}

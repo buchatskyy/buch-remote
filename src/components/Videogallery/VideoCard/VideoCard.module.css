@@ -1,0 +1,83 @@
+.container {
+    width: 15em;
+    height: 10em;
+    margin: 10px;
+    border-radius: 1.5em;
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5em;
+    object-fit: cover;
+}
+
+.focusedicon {
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+}
+
+.iconcontainer {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    z-index: 500;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .5s;
+
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 2em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: black;
+    transition: transform .4s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.537);
+
+}
+
+.modalOverlay {
+    position: fixed;
+    z-index: 1100;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modalContent {
+    max-width: 95vw;
+    max-height: 95vh;
+}
+.modalVideo {
+    max-width: 95vw;
+    max-height: 95vh;
+    border-radius: 1em;
+    border: 3px solid rgba(62, 59, 3, 0.748);
+    box-shadow: 0 0 30px 5px rgba(62, 59, 3, 0.748);
+    z-index: 1200;
+}
+.exit {
+    color: white;
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    font-style: italic;
+    font-size: smaller;
+}

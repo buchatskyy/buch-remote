@@ -1,0 +1,21 @@
+.icon {
+    width: 2em;
+    height: 2em;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+.iha {
+    display:flex;
+    align-items: center;
+}
+.container a {
+    color: black;
+    padding-right: 5px;
+}
+.container a:visited {
+    color: black;
+}

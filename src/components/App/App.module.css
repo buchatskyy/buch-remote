@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+}
+.main {
+    display: flex;
+    flex: 1 0 auto;
+}
+.sidebar {
+width: 6em;
+max-width: 15em;
+min-width: 10em;
+background-color: rgba(214, 211, 65, 0.196);
+display: flex;
+}
+.content {
+width: 80%;
+max-width: 800px;
+margin: auto;
+padding: 1em;
+}
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+.container {
+    min-width: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+a:visited:hover {
+    
+    color: rgb(183, 115, 41);
+}
+a , a:visited {
+    color: rgb(107, 89, 170) ;
+}
+.footer {
+    height: 10em;
+}

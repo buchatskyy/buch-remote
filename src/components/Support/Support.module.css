@@ -1,0 +1,29 @@
+.donate {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.donate:hover {
+  background-color: #334155;
+}
+
+.text {
+  font-size: larger;
+}
+
+.text li {
+  padding: 6px 0;
+  font-style: italic;
+}
+.donate a {
+  color: white;
+}
+.donate a:hover {
+  color: white;
+}

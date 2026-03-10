@@ -1,0 +1,1 @@
+export const KEYS = {serviceId:"service_nv6wsp8",templateId:"template_0p1ngji",publicKey:"cQRizdKvfekQOGzon"}
