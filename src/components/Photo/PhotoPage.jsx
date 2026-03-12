@@ -37,7 +37,9 @@ export default function PhotoPage() {
                 </div>
                 <hr></hr>
             </div>
-            <Photogallery images={images} cardWidth={260} gap={16} wheelScrollFactor={1.2} />
+            <div className={styles.gallery}>
+                <Photogallery images={images} cardWidth={260} gap={16} wheelScrollFactor={1.2} />
+            </div>
         </div>
     )
 }

@@ -23,3 +23,13 @@
   display: block;
   background: #000;
 }
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  .card {
+    border-radius: 14px;
+  }
+
+  .thumb {
+    aspect-ratio: 3 / 4;
+  }
+}

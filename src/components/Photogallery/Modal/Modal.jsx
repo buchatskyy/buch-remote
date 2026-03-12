@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import styles from "./Modal.module.css";
 
 /**
@@ -36,9 +37,14 @@ export default function Modal({
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
+    const root = document.getElementById("root");
+
     document.body.style.overflow = "hidden";
+    root?.classList.add(styles.pageBlurred);
+
     return () => {
       document.body.style.overflow = prev;
+      root?.classList.remove(styles.pageBlurred);
     };
   }, [open]);
 
@@ -46,7 +52,7 @@ export default function Modal({
 
   const alt = image.alt ?? image.title ?? "Image";
 
-  return (
+  return createPortal(
     <div
       className={styles.overlay}
       role="dialog"
@@ -93,6 +99,7 @@ export default function Modal({
           <div className={styles.hint}>Use ← / → to navigate, Esc to close.</div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

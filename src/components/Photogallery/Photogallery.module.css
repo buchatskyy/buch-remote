@@ -63,6 +63,30 @@
 
 @media (max-width: 900px), (hover: none) and (pointer: coarse) {
   .wrap {
-    min-height: 14.5rem;
+    min-height: 16.5rem;
+    padding: 0 0.25rem;
+  }
+
+  .scroller {
+    scroll-padding-inline: 1rem;
+  }
+
+  .navBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    top: auto;
+    bottom: -0.25rem;
+    transform: none;
+  }
+
+  .left {
+    left: 50%;
+    margin-left: -2.6rem;
+  }
+
+  .right {
+    right: 50%;
+    margin-right: -2.6rem;
   }
 }

@@ -3,8 +3,7 @@
   inset: 0;
   z-index: 9999;
 
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
+  background: rgba(8, 10, 18, 0.55);
 
   display: flex;
   align-items: center;
@@ -92,4 +91,57 @@
   margin-top: 6px;
   font-size: 13px;
   opacity: 0.7;
+}
+
+.pageBlurred {
+  filter: blur(10px);
+  transition: filter 0.2s ease;
+}
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  .overlay {
+    padding: 10px;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 16px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .full {
+    max-height: 68vh;
+    border-radius: 12px;
+  }
+
+  .close,
+  .nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav {
+    font-size: 20px;
+  }
+
+  .navLeft {
+    left: 8px;
+  }
+
+  .navRight {
+    right: 8px;
+  }
+
+  .title {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  .hint {
+    font-size: 0.75rem;
+  }
 }

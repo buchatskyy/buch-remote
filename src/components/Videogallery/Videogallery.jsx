@@ -23,10 +23,12 @@ export default function Videogallery() {
                 </div>
             </div>
             <hr></hr>
-            <div className={styles.content}>
+            <div className={styles.gallery}>
+                <div className={styles.content}>
                 {videos.map((v) => (
                     <VideoCard key={v.name} src={v.src} name={v.name} />
                 ))}
+                </div>
             </div>
         </div>
 

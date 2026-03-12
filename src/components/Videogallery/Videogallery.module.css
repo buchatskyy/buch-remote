@@ -8,15 +8,26 @@
 }
 .text p {
     line-height: 1;
+    padding: 0.75em 0;
 }
 .text h2 {
 align-self: center;
 }
 
+.gallery {
+    margin-top: 15em;
+}
+
 @media (max-width: 900px), (hover: none) and (pointer: coarse) {
     .text p {
-        line-height: 1.2;
-        margin: 0.5em 0;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin: 1.1em 0;
+        padding: 1.1em 0;
+    }
+
+    .gallery {
+        margin-top: 15em;
     }
 
     .content {
