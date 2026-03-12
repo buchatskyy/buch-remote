@@ -41,6 +41,7 @@
 .textBottom {
     height: 2em;
     font-size: 1.5em;
+    
 }
 
 .download {
@@ -51,4 +52,24 @@
 
 .container:first-child {
     margin-top: 3em;
+}
+.message {
+    animation: show 2s linear;
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

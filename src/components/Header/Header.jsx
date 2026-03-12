@@ -17,10 +17,18 @@ export default function Header() {
   const { openLoginCard } = useLoginCard();
   const navigate = useNavigate();
   const logoRef = useRef(null);
+  const timerRef = useRef(null);
 
   const [isUserCardOpen, setIsUserCardOpen] = useState(false);
   const userMenuRef = useRef(null);
   const userButtonRef = useRef(null);
+  const startPress = (e) => {
+    e.preventDefault();
+    timerRef.current = setTimeout(handleDoubleClick, 1000);
+  }
+  const endPress = () => {
+    clearTimeout(timerRef.current);
+  }
 
   const handleDoubleClick = () => {
     const el = logoRef.current;
@@ -76,6 +84,9 @@ export default function Header() {
     <div className={styles.container}>
       <div
         ref={logoRef}
+        style={{ WebkitUserSelect: 'none', userSelect: 'none' }}
+        onTouchStart={startPress}
+        onTouchEnd={endPress}
         onDoubleClick={handleDoubleClick}
         onAnimationEnd={handleAnimationEnd}
         className={styles.logoContainer}
@@ -127,6 +138,7 @@ export default function Header() {
                     src={user.photoURL}
                     alt="avatar"
                     className={styles.icon}
+                    referrerPolicy="no-referrer"
                   />
 
                     : <Icon className={styles.icon} />}
@@ -154,17 +166,20 @@ export default function Header() {
                   <div className={styles.userInfo}>
                     <div className={styles.userName}>{user?.displayName}</div>
                     <div className={styles.userEmail}>{user?.email}</div>
+                    <div style={{cursor: 'pointer'}} onClick={handleLogout} >
+                      <div className="user">
+                        <Logout className={styles.logout} />
+                      </div>
+                      <div className={styles.text}>Logout</div>
+                    </div>
+
+
                   </div>
                 </div>
               )}
             </div>
 
-            <div onClick={handleLogout} className={styles.userBlock}>
-              <div className="user">
-                <Logout className={styles.logout} />
-              </div>
-              <div className={styles.text}>Logout</div>
-            </div>
+
           </>
         ) : (
           <div

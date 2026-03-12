@@ -1,8 +1,20 @@
 import { useState } from "react";
-import  styles from "./Landing.module.css"
+import styles from "./Landing.module.css"
 import OrderForm from "../Landing/OrderForm"
+import useAuth from "../../hooks/useAuth"
+import useLoginCard from "../../hooks/useLoginCard"
 export default function Landing() {
     const [showForm, setShowForm] = useState(false);
+    const { user } = useAuth()
+    const {openLoginCard} = useLoginCard()
+    const handleClick = () => {
+        if (user) {
+            setShowForm(!showForm)
+        } else {
+            openLoginCard()
+        }
+
+    }
     return (
         <div className={styles.page}>
             <div className="styles.container">
@@ -68,9 +80,9 @@ export default function Landing() {
                     <p>
                         If you're open to working with someone hungry to grow and committed to delivering quality work — let's collaborate.
                     </p>
-                    <button onClick={()=>setShowForm(!showForm)}>{showForm ? "Hide the form" : "Compile the form to contact me"}</button>
+                    <button onClick={handleClick}>{showForm ? "Hide the form" : "Compile the form to contact me"}</button>
                 </section>
-                {showForm && <OrderForm/>}
+                {showForm && <OrderForm />}
             </div>
         </div>
     );

@@ -14,16 +14,16 @@ export default function Cv() {
     const handleClick = (e) => {
         if (timerRef.current) {
             clearTimeout(timerRef.current);
-            timerRef.current=null;
+            timerRef.current = null;
         }
         if (isAgree && user) {
             setIsDownloaded(true);
             timerRef.current = setTimeout(() => setIsDownloaded(false), 2000);
         }
         if (!(isAgree && user)) {
-        e.preventDefault()
-        return
-    }
+            e.preventDefault()
+            return
+        }
     };
     useEffect(() => {
         return (() => {
@@ -42,7 +42,7 @@ export default function Cv() {
             </div>
             <div className={styles.download}>
                 <div>
-                    <a href= "/files/js.pdf"  onClick={handleClick} download="CV-Buceacii.pdf">
+                    <a href="/files/js.pdf" onClick={handleClick} download="CV-Buceacii.pdf">
                         <Download fill={(isAgree && user) ? "#1C274C" : "gray"} className={styles.icon} />
                     </a>
                 </div>
@@ -53,9 +53,11 @@ export default function Cv() {
                     </label>
                 </div>
             </div>
-            <div className={`${styles.text} ${styles.textBottom}`} >
-                {isDownloaded ? "Thank you for downloading! I really appreciate it." : ""}
-            </div>
+           
+                <div className={`${styles.text} ${styles.textBottom}`} >
+                   {isDownloaded && <span className={styles.message}>Thank you for downloading! I really appreciate it</span> }
+                </div>
+
         </div>
     )
 }
