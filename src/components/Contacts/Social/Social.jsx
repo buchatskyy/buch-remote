@@ -6,9 +6,9 @@ import styles from "./Social.module.css"
 
 
 
-export default function Social() {
+export default function Social({ className = "" }) {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${className}`.trim()}>
             <a target="_blank" rel="noreferrer noopener" className={styles.iha} href="https://linkedin.com/in/dimitrii-buceacii-21ab9b362">
                 <LinkedIn style={{ fill: "#0077B5" }} className={styles.icon} />
                 Dimitrii Buceacii

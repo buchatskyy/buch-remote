@@ -14,10 +14,10 @@ export default function Footer() {
                     <Links/>
                 </div>
                 <div>
-                    <Contact/>
+                    <Contact className={styles.footerPlainBlock}/>
                 </div>
                 <div>
-                    <Social/>
+                    <Social className={styles.footerPlainBlock}/>
                 </div>
 
             </div>

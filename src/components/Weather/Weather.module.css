@@ -114,3 +114,55 @@
     background: url('../../media/weather/thunderstorm.png');
     background-size: cover;
 }
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+    .container {
+        min-height: calc(100dvh - 18rem);
+        height: auto;
+        justify-content: flex-start;
+        padding: 0.45rem 0.6rem 0.65rem;
+        box-sizing: border-box;
+        border-radius: 0.75em;
+    }
+
+    .cont {
+        width: 100%;
+    }
+
+    .inputdiv {
+        width: 100%;
+        max-width: 26rem;
+    }
+
+    .input {
+        width: 100%;
+        box-sizing: border-box;
+        height: 2.7em;
+        font-size: 1rem;
+    }
+
+    .enterInf {
+        font-size: 1.15em;
+        text-align: center;
+    }
+
+    .infoContainer {
+        width: min(100%, 26rem);
+        margin-top: 0.55em;
+        padding: 0.7em 0.75em;
+        box-sizing: border-box;
+    }
+
+    .infoContainer h1,
+    .infoContainer h2 {
+        margin: 0.35em 0;
+    }
+
+    .infoContainer h1 {
+        font-size: 1.25rem;
+    }
+
+    .infoContainer h2 {
+        font-size: 1rem;
+    }
+}

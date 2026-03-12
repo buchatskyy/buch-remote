@@ -1,24 +1,28 @@
-import { NavLink } from "react-router-dom"
-import styles from "./Sidebar.module.css"
+import { NavLink } from "react-router-dom";
+import styles from "./Sidebar.module.css";
 
-export default function Sidebar() {
+const links = [
+    { to: "/photo", label: "Photogallery" },
+    { to: "/video", label: "Videogallery" },
+    { to: "/support", label: "Support me" },
+];
+
+export default function Sidebar({ isMobileOpen = false, onClose }) {
     return (
-        <div className={styles.container}>
-            <div className={styles.navigation}>
-            <div className={styles.navContainer}>
-                <NavLink to="/photo">Photogallery</NavLink>
+        <div className={`${styles.container} ${isMobileOpen ? styles.containerOpen : ""}`}>
+            <button
+                type="button"
+                className={`${styles.overlay} ${isMobileOpen ? styles.overlayOpen : ""}`}
+                aria-label="Close sidebar"
+                onClick={onClose}
+            />
+            <div className={`${styles.navigation} ${isMobileOpen ? styles.navigationOpen : ""}`}>
+                {links.map(({ to, label }) => (
+                    <div key={to} className={styles.navContainer}>
+                        <NavLink to={to} onClick={onClose}>{label}</NavLink>
+                    </div>
+                ))}
             </div>
-            <div className={styles.navContainer}>
-                <NavLink to="/video">Videogallery</NavLink>
-            </div>
-            <div className={styles.navContainer}>
-                <NavLink to="/support">Support me</NavLink>
-            </div>
-            {/* <div className={styles.navContainer}>
-                <NavLink to="/about">About me</NavLink>
-            </div> */}
-            </div>
-            
         </div>
-    )
+    );
 }

@@ -81,3 +81,12 @@
     font-style: italic;
     font-size: smaller;
 }
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+    .container {
+        width: 100%;
+        max-width: 18rem;
+        height: 11.5em;
+        margin: 8px auto;
+    }
+}

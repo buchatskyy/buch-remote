@@ -4,9 +4,9 @@ import { ReactComponent as Tel } from "../../../media/icons/telephone.svg"
 import { ReactComponent as Mail } from "../../../media/icons/email.svg"
 import { ReactComponent as Whatsapp } from "../../../media/icons/whatsapp.svg"
 
-export default function Contact() {
+export default function Contact({ className = "" }) {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${className}`.trim()}>
             <div className={`${styles.telContainer} ${styles.block}`}>
                 <Tel style={{stroke:"orange"}} className={styles.icon} />
                 <a target="_blank" rel="noreferrer noopener" href="tel:+393896345280">+39 389 634 52 80</a>

@@ -12,3 +12,14 @@
 .text h2 {
 align-self: center;
 }
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+    .text p {
+        line-height: 1.2;
+        margin: 0.5em 0;
+    }
+
+    .content {
+        min-height: 0;
+    }
+}

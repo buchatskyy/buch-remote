@@ -1,17 +1,20 @@
 .container {
+    width: 100%;
     height: 10em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
 }
+
 .bottom {
     display: flex;
     align-items: center;
     justify-content:flex-start;
     background-color:rgb(230, 211, 211) ;
     height: 20%;
-    
 }
+
 .top {
     background-color: rgb(236, 225, 225);
     height: 80%;
@@ -19,16 +22,75 @@
     align-items: top;
     justify-content: space-between;
     align-items: center;
-
 }
+
+.top > div {
+    min-width: 0;
+}
+
 .logoF {
     height: 1.5em;
     width: auto;
     margin-left: 1em;
     margin-right: 2em;
     fill: red;
-
 }
+
 .bottom p {
     font-size:x-small;
+}
+
+.footerPlainBlock {
+    background: transparent;
+}
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+    .container {
+        height: auto;
+        width: 100%;
+    }
+
+    .top {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        padding: 0.75em 0;
+        min-height: 7.5em;
+        height: auto;
+        align-items: start;
+        width: 100%;
+        box-sizing: border-box;
+        justify-items: stretch;
+    }
+
+    .top > div {
+        width: 100%;
+        justify-self: stretch;
+        box-sizing: border-box;
+        padding: 0 0.35em;
+    }
+
+    .bottom {
+        min-height: 2.5em;
+        padding: 0.35em 0.5em 0.5em;
+        height: auto;
+        gap: 0.5em;
+        flex-wrap: wrap;
+    }
+
+    .logoF {
+        height: 1.25em;
+        margin-right: 0.5em;
+        margin-left: 0;
+    }
+
+    .bottom p {
+        font-size: 0.65rem;
+        margin: 0;
+    }
+
+    .footerPlainBlock {
+        padding: 0;
+        background: transparent;
+    }
 }

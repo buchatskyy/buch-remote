@@ -12,9 +12,15 @@ export default function Contacts() {
                 <Map/>
             </div>
             <div className={styles.contactContainer}>
-                <Address />
-                <Contact />
-                <Social />
+                <div className={styles.contactBlock}>
+                    <Address />
+                </div>
+                <div className={styles.contactBlock}>
+                    <Contact />
+                </div>
+                <div className={styles.contactBlock}>
+                    <Social />
+                </div>
             </div>
         </div>
     )

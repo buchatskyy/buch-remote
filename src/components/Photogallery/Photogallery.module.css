@@ -60,3 +60,9 @@
   opacity: 0.35;
   cursor: default;
 }
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  .wrap {
+    min-height: 14.5rem;
+  }
+}

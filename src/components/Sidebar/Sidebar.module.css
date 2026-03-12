@@ -1,10 +1,10 @@
 .container {
-display: flex;
-flex-direction: column;
-flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 90%;
 }
-.navContainer {
 
+.navContainer {
     height: 3em;
     padding-left: .5em;
     border-radius: .5em;
@@ -14,20 +14,72 @@ flex-basis: 90%;
     box-shadow: -2px -1px 3px 1px rgb(183, 115, 41) ;
     margin-top: .5em;
     width: 100%;
-  
 }
+
 .container:first-child {
     padding-top: 2em;
 }
+
 a:hover {
     color: rgb(183, 115, 41);
 }
+
 .navContainer:has(a:hover) {
     background-color: whitesmoke;
     width: 100%;
 }
+
 .navigation {
     position: sticky;
     top: 8em;
-    width: 100%;  
+    width: 100%;
+}
+
+.overlay {
+    display: none;
+}
+
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+    .container {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1500;
+    }
+
+    .containerOpen {
+        pointer-events: auto;
+    }
+
+    .overlay {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        border: none;
+        padding: 0;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .overlayOpen {
+        opacity: 1;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: min(18rem, calc(100vw - 3rem));
+        height: 100%;
+        padding: 4.75rem 0.75rem 1rem;
+        background: #f8f3ec;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.16);
+    }
+
+    .navigationOpen {
+        transform: translateX(0);
+    }
 }
