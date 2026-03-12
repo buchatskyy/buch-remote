@@ -75,7 +75,7 @@ a {
 }
 
 .logoContainer {
-    width: 10em;
+    width: clamp(10em, 18vw, 15em);
 }
 
 .text {

@@ -18,6 +18,7 @@ const navItems = [
   { to: "/cv", label: "CV" },
   { to: "/contacts", label: "Contacts" },
 ];
+const mobileMediaQuery = "(max-width: 900px), (hover: none) and (pointer: coarse)";
 
 export default function Header({ isSidebarOpen, onSidebarToggle }) {
   const { user, logout } = useAuth();
@@ -45,7 +46,9 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
   const startPress = (e) => {
     e.preventDefault();
     timerRef.current = setTimeout(() => {
-      const targetRef = window.innerWidth <= 768 ? mobileLogoRef : desktopLogoRef;
+      const targetRef = window.matchMedia(mobileMediaQuery).matches
+        ? mobileLogoRef
+        : desktopLogoRef;
       handleDoubleClick(targetRef);
     }, 1000);
   };
@@ -139,6 +142,7 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
           style={{ WebkitUserSelect: "none", userSelect: "none" }}
           onTouchStart={startPress}
           onTouchEnd={endPress}
+          onTouchCancel={endPress}
           onDoubleClick={() => handleDoubleClick(desktopLogoRef)}
           onAnimationEnd={handleAnimationEnd}
           className={styles.logoContainer}
@@ -246,6 +250,7 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
           style={{ WebkitUserSelect: "none", userSelect: "none" }}
           onTouchStart={startPress}
           onTouchEnd={endPress}
+          onTouchCancel={endPress}
           onDoubleClick={() => handleDoubleClick(mobileLogoRef)}
           onAnimationEnd={handleAnimationEnd}
           className={`${styles.logoContainer} ${styles.mobileLogoContainer}`}
