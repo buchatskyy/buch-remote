@@ -7,14 +7,6 @@
     height: 4em;
 }
 
-.userContainer {
-    /* display: flex;
-    width: 7em;
-    align-items: center;
-    justify-content: space-between;
-    flex: 0 0 auto */
-}
-
 .userBlock {
     display: flex;
     flex-direction: column;

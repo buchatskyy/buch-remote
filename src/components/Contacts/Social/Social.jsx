@@ -13,7 +13,7 @@ export default function Social() {
                 <LinkedIn style={{ fill: "#0077B5" }} className={styles.icon} />
                 Dimitrii Buceacii
             </a>
-            <a target="_blank" rel="noreferrer noopener" className={styles.iha} href="https://https://www.instagram.com/buchatskyyy">
+            <a target="_blank" rel="noreferrer noopener" className={styles.iha} href="https://www.instagram.com/buchatskyyy?igsh=MTc0dDVxam56Z3JxYw==">
                 <Instagram className={styles.icon}/>
                 buchatskyyy
             </a>
