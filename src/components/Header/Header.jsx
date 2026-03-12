@@ -29,8 +29,10 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
 
   const [isUserCardOpen, setIsUserCardOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const userMenuRef = useRef(null);
-  const userButtonRef = useRef(null);
+  const desktopUserMenuRef = useRef(null);
+  const desktopUserButtonRef = useRef(null);
+  const mobileUserMenuRef = useRef(null);
+  const mobileUserButtonRef = useRef(null);
   const mobileNavRef = useRef(null);
   const mobileNavButtonRef = useRef(null);
   const desktopLogoRef = useRef(null);
@@ -94,11 +96,15 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      const isMobileViewport = window.matchMedia("(max-width: 900px), (hover: none) and (pointer: coarse)").matches;
+      const activeUserMenuRef = isMobileViewport ? mobileUserMenuRef : desktopUserMenuRef;
+      const activeUserButtonRef = isMobileViewport ? mobileUserButtonRef : desktopUserButtonRef;
+
       if (
-        userMenuRef.current &&
-        !userMenuRef.current.contains(event.target) &&
-        userButtonRef.current &&
-        !userButtonRef.current.contains(event.target)
+        activeUserMenuRef.current &&
+        !activeUserMenuRef.current.contains(event.target) &&
+        activeUserButtonRef.current &&
+        !activeUserButtonRef.current.contains(event.target)
       ) {
         setIsUserCardOpen(false);
       }
@@ -153,7 +159,7 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
             <div className={styles.userWrapper}>
               <button
                 type="button"
-                ref={userButtonRef}
+                ref={desktopUserButtonRef}
                 onClick={handleUserCardToggle}
                 className={`${styles.userBlock} ${styles.userButton}`}
               >
@@ -173,7 +179,7 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
               </button>
 
               {isUserCardOpen && (
-                <div ref={userMenuRef} className={styles.userCard}>
+                <div ref={desktopUserMenuRef} className={styles.userCard}>
                   <div className={styles.userCardHeader}>
                     {user?.photoURL ? (
                       <img
@@ -289,7 +295,7 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
               <div className={styles.userWrapper}>
                 <button
                   type="button"
-                  ref={userButtonRef}
+                  ref={mobileUserButtonRef}
                   onClick={handleUserCardToggle}
                   className={`${styles.userBlock} ${styles.userButton}`}
                 >
@@ -308,7 +314,7 @@ export default function Header({ isSidebarOpen, onSidebarToggle }) {
                 </button>
 
                 {isUserCardOpen && (
-                  <div ref={userMenuRef} className={styles.userCard}>
+                  <div ref={mobileUserMenuRef} className={styles.userCard}>
                     <div className={styles.userCardHeader}>
                       {user?.photoURL ? (
                         <img

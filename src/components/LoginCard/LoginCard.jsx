@@ -1,8 +1,24 @@
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
+
 import useAuth from "../../hooks/useAuth";
 import styles from "./LoginCard.module.css";
 
 export default function LoginCard({ onClose }) {
   const { login } = useAuth();
+
+  useEffect(() => {
+    const root = document.getElementById("root");
+    const prevOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    root?.classList.add(styles.pageBlurred);
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      root?.classList.remove(styles.pageBlurred);
+    };
+  }, []);
 
   const handleGoogleLogin = async () => {
     try {
@@ -18,7 +34,7 @@ export default function LoginCard({ onClose }) {
     e.stopPropagation();
   };
 
-  return (
+  return createPortal(
     <div className={styles.backdrop} onClick={onClose}>
       <div className={styles.card} onClick={handleCardClick}>
         <button
@@ -46,6 +62,7 @@ export default function LoginCard({ onClose }) {
           Continue with Google
         </button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

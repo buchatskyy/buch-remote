@@ -7,9 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  background: rgba(10, 10, 10, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.28);
 
   padding: 16px;
 }
@@ -115,6 +113,11 @@
 
 .googleButton:active {
   transform: translateY(0);
+}
+
+.pageBlurred {
+  filter: blur(10px);
+  transition: filter 0.2s ease;
 }
 
 @media (max-width: 480px) {
